@@ -2,12 +2,38 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="me.romanpopov.starwarsfilms">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
+        android:name=".utils.ProjectApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.StarwarsFilms" />
+        android:theme="@style/Theme.StarwarsFilms">
+        <activity
+            android:name=".ui.activities.WorldActivity"
+            android:exported="false"
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme.StarwarsFilms" />
+        <activity
+            android:name=".ui.activities.CharacterActivity"
+            android:exported="false"
+            android:label="@string/title_activity_character"
+            android:theme="@style/Theme.StarwarsFilms" />
+        <activity
+            android:name=".ui.activities.FilmsActivity"
+            android:exported="true"
+            android:label="@string/title_activity_films"
+            android:theme="@style/Theme.StarwarsFilms">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
 
 </manifest>
